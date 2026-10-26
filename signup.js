@@ -14,7 +14,7 @@
     if (pending || !form.reportValidity()) return;
     const signupUrl = window.LACAILLE_CONFIG?.signupUrl;
     if (!signupUrl) {
-      message('Email signup is opening soon. In the meantime, say hello above.');
+      message('Email signup is opening soon. Please check back shortly.');
       return;
     }
     let url;
@@ -38,12 +38,12 @@
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.ok !== true) {
-        throw new Error(response.status === 429 ? 'Please wait a little before trying again.' : 'Signup did not complete. Please try again, or say hello above.');
+        throw new Error(response.status === 429 ? 'Please wait a little before trying again.' : 'Signup did not complete. Please try again later.');
       }
       message('You’re on the list. I’ll let you know when it’s ready!');
       form.reset();
     } catch (error) {
-      message(error.name === 'AbortError' ? 'That took too long. Please try again.' : error instanceof TypeError ? 'Could not connect. Please try again, or say hello above.' : error.message, true);
+      message(error.name === 'AbortError' ? 'That took too long. Please try again.' : error instanceof TypeError ? 'Could not connect. Please try again later.' : error.message, true);
     } finally {
       clearTimeout(timeout);
       pending = false;
