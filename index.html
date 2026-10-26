@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffdf5">
+  <meta name="description" content="Something fun is coming soon. Be the first to know.">
+  <title>Paul LaCaille — Something fun is coming soon</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="signup.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="./" aria-label="Paul LaCaille home"><span class="brand-panda" aria-hidden="true"></span><span>Paul LaCaille</span></a>
+    <a class="hello" href="mailto:paul@lacaille.me">Say hello <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <div class="panda" role="img" aria-label="A curious panda leaning on a cardboard box"></div>
+    <h1>Something fun<br>is coming soon.</h1>
+    <section class="signup" aria-labelledby="signup-label">
+      <h2 id="signup-label">Be the first to know.</h2>
+      <form id="signup-form" method="post">
+        <label class="sr-only" for="email">Your email address</label>
+        <input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email" maxlength="254" required aria-describedby="signup-status">
+        <div class="bot-field" aria-hidden="true"><label for="company">Leave this empty</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" id="notify">Notify me</button>
+      </form>
+      <p id="signup-status" role="status" aria-live="polite"></p>
+      <noscript><p>Please <a href="mailto:paul@lacaille.me?subject=Notify%20me">email me</a> to hear when something fun launches.</p></noscript>
+    </section>
+  </main>
+</body>
+</html>
