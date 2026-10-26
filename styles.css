@@ -1,0 +1,31 @@
+:root{color-scheme:light;--ink:#06271a;--paper:#fffdf5;--green:#103e2b;--line:#b8c3bf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;min-width:280px;min-height:100svh}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #7b9c7f;outline-offset:5px}
+.header{width:90%;max-width:1400px;margin:0 auto;min-height:80px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:30px;letter-spacing:-1.3px;white-space:nowrap}
+.brand-panda{width:50px;height:50px;flex:none;background-image:url('assets/approved-artwork.png');background-repeat:no-repeat;background-size:1536px 1024px;background-position:-77px -16px;mix-blend-mode:multiply}
+.hello{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:600;white-space:nowrap}
+.hello span{font-size:25px;transition:transform .15s ease}
+.hello:hover span{transform:translate(2px,-2px)}
+main{width:100%;margin:0 auto;padding:62px 24px 45px;text-align:center}
+/* Display the exact approved illustration as a CSS sprite, without repainting it. */
+.panda{width:min(440px,100%);aspect-ratio:440 / 300;margin:0 auto 25px;background-image:url('assets/approved-artwork.png');background-repeat:no-repeat;background-size:349.090909% 341.333333%;background-position:50% 19.337016%;mix-blend-mode:multiply;mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}
+h1{margin:0;font-size:clamp(45px,7.2vw,108px);line-height:.99;font-weight:900;letter-spacing:-.055em;text-wrap:balance}
+.signup{max-width:645px;margin:75px auto 0}
+h2{font-size:19px;line-height:1.4;font-weight:600;margin:0 0 12px}
+form{display:flex;gap:10px;position:relative}
+input[type=email]{min-width:0;flex:1;background:#fff;color:var(--ink);font:inherit;font-size:19px;padding:17px 23px;border:1px solid #9aaeb0;border-radius:7px;box-shadow:0 1px 3px #05271808}
+input::placeholder{color:#66777d;opacity:1}
+button{appearance:none;border:1px solid var(--green);border-radius:7px;background:var(--green);color:#fff;font:inherit;font-size:19px;font-weight:600;padding:16px 33px;cursor:pointer;white-space:nowrap;transition:background .15s ease,transform .15s ease}
+button:hover{background:#195337}button:active{transform:translateY(1px)}button:disabled{cursor:wait;opacity:.7}
+#signup-status{min-height:24px;font-size:14px;line-height:1.5;margin:12px 0 0;color:#476151}
+#signup-status[data-error=true]{color:#9b352c}
+.bot-field{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1500px){main{padding-top:78px}}
+@media(max-height:800px) and (min-width:701px){main{padding-top:24px}.panda{width:340px;margin-bottom:15px}h1{font-size:80px}.signup{margin-top:35px}}
+@media(max-width:700px){.header{width:calc(100% - 40px);min-height:76px}.brand{font-size:22px;letter-spacing:-.8px;gap:6px}.brand-panda{width:38px;height:40px;background-size:1228.8px 819.2px;background-position:-61.6px -12.8px}.hello{font-size:14px;gap:5px}.hello span{font-size:21px}main{padding:52px 22px 30px}.panda{width:min(350px,100%);margin-bottom:28px}h1{font-size:clamp(40px,7.7vw,55px);line-height:1.04;letter-spacing:-.05em}.signup{margin-top:46px;max-width:460px}h2{font-size:17px}input[type=email]{font-size:16px;padding:16px}button{font-size:16px;padding:16px 23px}}
+@media(max-width:420px){form{flex-direction:column;gap:9px}.brand{font-size:20px}.brand-panda{width:34px}.header{gap:8px}.panda{width:300px}.signup{margin-top:36px}button{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
